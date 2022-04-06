@@ -13,9 +13,9 @@
     const helloSpan = React.createElement('span', {children: 'Hello'})
     const worldSpan = React.createElement('span', {children: 'World'})
 
-    const divProps = {className: 'container', children: [helloSpan, worldSpan]}
+    const divProps = {className: 'container'}
     
-    const helloDiv = React.createElement('div', divProps)
+    const helloDiv = React.createElement('div', divProps, helloSpan, ' ', worldSpan)
     ReactDOM.render(helloDiv, rootElement)
   </script>
 </body>
