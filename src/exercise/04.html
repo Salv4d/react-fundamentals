@@ -15,8 +15,19 @@
       )
     }
 
-    const hello = React.createElement(message, {children: 'Hello World'})
-    const goodbye = React.createElement(message, {children: 'Goodbye World'})
+    const PropTypes = {
+      string(props, propName, componentName) {
+        if (typeof props[propName] !== 'string') {
+          return new Error(`Type of ${propName} should be string`)
+        }
+      }
+    }
+
+    Message.propTypes = {
+      subject: PropTypes.string,
+      greeting: PropTypes.string
+    }
+
     const element = (
       <div>
         <Message greeting="Hello" subject="World" />
